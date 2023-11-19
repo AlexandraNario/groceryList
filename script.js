@@ -43,5 +43,18 @@ groceryItems.forEach(item => {
 totalCostElement.innerHTML = totalCost.toFixed(2);
 totalQuantityElement.innerHTML = totalQuantity; 
 }
+function isolateCategory(category){
+    groceryList.innerHTML = '';
+
+    let filterItems = groceryItems.filter(function(item){
+        return item.category === category;
+    });
+ filterItems.forEach(function(item) {
+    let itemDiv = document.createElement('div');
+    itemDiv.innerHTML =`<b>${item.name}</b> (${item.category}): $${item.price} - ${item.quantity} units`;
+    groceryList.appendChild(itemDiv);
+ });
+ 
+}
 // Call the displayGroceryItems function 
 displayGroceryItems();
