@@ -43,7 +43,9 @@ groceryItems.forEach(item => {
 totalCostElement.innerHTML = totalCost.toFixed(2);
 totalQuantityElement.innerHTML = totalQuantity; 
 }
+
 function isolateCategory(category){
+    
     groceryList.innerHTML = '';
 
     let filterItems = groceryItems.filter(function(item){
@@ -56,5 +58,17 @@ function isolateCategory(category){
  });
  
 }
-// Call the displayGroceryItems function 
-displayGroceryItems();
+
+// Call the displayGroceryItems function in the showAllCategories function
+function showAllCategories() {
+    displayGroceryItems();
+ };
+
+ //create a functtion called orderItemsByCost
+ function orderItemsByCost(){
+//inside use the sort () method sorts the elements of an array. 
+  groceryItems.sort(function (a, b){
+    return b.price - a.price;
+  });
+  displayGroceryItems();
+ };
