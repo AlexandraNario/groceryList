@@ -82,8 +82,37 @@ function showAllCategories() {
     const price = prompt("Enter the item price:");
     const quantity = prompt("Enter the item quantity:");
 //create a conditional to check if the categories above are missing the LOGICAL OR || operator
-//alert the user if a piece of information is missing
-//use return to stop the function's execution
+//Logical NOT opertor `!` is used to check if any of the variables are falsy(undefined or empty)
+if ( !name || !category || !price || !quantity){
+    alert ("A piece of information is missing.");
+return; 
+};
+//use the isNaN method and the || operator to check if priceValue and quantityValue is NaN
+let priceValue = parseFloat(price);
+let quantityValue = parseInt(quantity);
 
+if (isNaN(priceValue)||isNaN(quantityValue)){
+    alert ("Please enter valid numeric values for price and quantity.");
+    return;
+};
+//create an object called newItem 
+//with keys name, category, price, and quantity , and values name, category, price, and quantityValue
+//for price value element we will switch price with priceValue, though I have tested it with price and it did work 
+const newItem = {
+    name: name,
+    category: category,
+    price: priceValue,
+    quantity: quantityValue,
+}; 
+
+//use JavaScript’s push method to add newItem to groceryItems
+// .push() Adds a new element to the end of the array
+
+groceryItems.push(newItem);
+
+// call the displayGroceryItems function
+displayGroceryItems();
 
  };
+ //Below all of the above functions, call the displayGroceryItems function again
+ displayGroceryItems();
