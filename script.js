@@ -72,3 +72,8 @@ function showAllCategories() {
   });
   displayGroceryItems();
  };
+
+ //Create a function called addItemPrompt
+ function addItemPrompt(){
+
+ };
