@@ -74,6 +74,16 @@ function showAllCategories() {
  };
 
  //Create a function called addItemPrompt
+ //Create four variables for name, category, price, and quantity
+//Set each to a prompt that will ask the user for their respective information
  function addItemPrompt(){
+    const name = prompt("What is the name of the item?");
+    const category = prompt("Enter the item category: Dairy, Fruits, or Vegetables.");
+    const price = prompt("Enter the item price:");
+    const quantity = prompt("Enter the item quantity:");
+//create a conditional to check if the categories above are missing the LOGICAL OR || operator
+//alert the user if a piece of information is missing
+//use return to stop the function's execution
+
 
  };
